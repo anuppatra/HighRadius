@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">High Radius</string>
+    <string name="select_job_desc">Select Job</string>
+    <string-array name="job_descriptions">
+
+        <item>HR</item>
+        <item>Consultant</item>
+        <item>Developer</item>
+        <item>CEO</item>
+        <item>Team Leader</item>
+        <item>Manager</item>
+        <item>Senior Manager</item>
+     </string-array>
 </resources>
