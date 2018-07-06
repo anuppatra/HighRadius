@@ -41,6 +41,16 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/Translucent" />
+        <activity
+            android:name="com.example.android.highradius.UserProfile"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Translucent" />
+        <activity
+            android:name="com.example.android.highradius.VerificationCheck"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/Translucent" />
     </application>
 
 </manifest>

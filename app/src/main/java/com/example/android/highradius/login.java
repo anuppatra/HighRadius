@@ -83,7 +83,7 @@ public class login extends AppCompatActivity {
                     StaticConfig.UID = user.getUid();
                     Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
                     if (firstTimeAccess) {
-                        startActivity(new Intent(login.this, UserProfile.class));
+                        startActivity(new Intent(login.this, VerificationCheck.class));
                         login.this.finish();
                     }
                 } else {
@@ -232,7 +232,7 @@ public class login extends AppCompatActivity {
                                 }*/
                                 initNewUserInfo();
                                 Toast.makeText(login.this, "Register and Login success", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(login.this, UserProfile.class));
+                                startActivity(new Intent(login.this, VerificationCheck.class));
                                 login.this.finish();
                             }
                         }
@@ -290,7 +290,7 @@ public class login extends AppCompatActivity {
                                         .show();
                             } else {
                                 saveUserInfo();
-                                startActivity(new Intent(login.this, MainActivity.class));
+                                startActivity(new Intent(login.this,VerificationCheck.class));
                                 login.this.finish();
                             }
                         }

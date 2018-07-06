@@ -46,7 +46,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Avatar"
         android:hint="Employee ID"
-        android:background="android:@color/transparent"
         android:textSize="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="35dp"
@@ -58,7 +57,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/empId"
         android:hint="Name"
-        android:background="android:@color/transparent"
+
         android:textSize="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="35dp"
@@ -69,11 +68,21 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/Name"
         android:hint="Email ID"
-        android:background="android:@color/transparent"
         android:textSize="30dp"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="35dp"
-        android:id="@+id/mailId"/>
+        android:id="@+id/mailId"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="30dp"
+        android:layout_toRightOf="@id/mailId"
+        android:layout_below="@id/Name"
+        android:layout_marginLeft="40dp"
+        android:id="@+id/emailID"/>
 
     <Spinner
         android:layout_width="120dp"
@@ -82,8 +91,6 @@
         android:layout_below="@id/mailId"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="25dp"
-        android:background="android:@color/transparent"
-
         >
 
     </Spinner>
