@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.android.highradius">
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
-    <!--Added for Accessing External Storage-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Added for Accessing External Storage -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,18 +19,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:launchMode="singleTop"
-            />
-
+            android:launchMode="singleTop" />
         <activity
-            android:name="com.example.android.highradius.login"
+            android:name=".login"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/TranslucentBackground">
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,20 +35,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.android.highradius.register"
+            android:name=".register"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Translucent" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
-            android:name="com.example.android.highradius.UserProfile"
+            android:name=".UserProfile"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Translucent" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
-            android:name="com.example.android.highradius.VerificationCheck"
+            android:name=".VerificationCheck"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/Translucent" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+        <activity
+            android:name=".viewreview"
+            android:label="@string/title_activity_viewreview"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

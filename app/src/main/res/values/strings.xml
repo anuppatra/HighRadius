@@ -10,5 +10,8 @@
         <item>Team Leader</item>
         <item>Manager</item>
         <item>Senior Manager</item>
-     </string-array>
+    </string-array>
+    <string name="Open">Open</string>
+    <string name="Close">Close</string>
+    <string name="title_activity_viewreview">viewreview</string>
 </resources>

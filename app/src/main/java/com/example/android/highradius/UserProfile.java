@@ -1,12 +1,21 @@
 package com.example.android.highradius;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,12 +34,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class UserProfile extends Activity implements AdapterView.OnItemSelectedListener {
-    private EditText editTextUsername, editTextPassword, editTextRepeatPassword;
+public class UserProfile extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    private TextView editTextUsername, description, age,dept;
     private TextView emailID;
     public static String STR_EXTRA_ACTION_REGISTER = "register";
     String[] spinner={"Development", "HR Team", "Pantry", "Accounts", "Cleaning", "Manager"};
-
+    ActionBarDrawerToggle mDrawerToggle;
+    DrawerLayout mDrawer;
+    NavigationView navigationView;
+    Toolbar mtoolbar;
 
 
 
@@ -38,10 +50,15 @@ public class UserProfile extends Activity implements AdapterView.OnItemSelectedL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        editTextUsername = (EditText) findViewById(R.id.et_username);
-        editTextPassword = (EditText) findViewById(R.id.et_password);
-        editTextRepeatPassword = (EditText) findViewById(R.id.et_repeatpassword);
-        emailID = (TextView) findViewById(R.id.emailID);
+        editTextUsername = (TextView) findViewById(R.id.user_profile_name);
+        description = (TextView) findViewById(R.id.job_desc);
+        age=findViewById(R.id.age);
+        dept=findViewById(R.id.dept);
+
+
+
+
+        emailID = (TextView) findViewById(R.id.mailId);
         /*Spinner spin=(Spinner)findViewById(R.id.action_bar_spinner);
         spin.setOnItemSelectedListener(UserProfile.this);
         ArrayAdapter aa=new ArrayAdapter(this, android.R.layout.simple_spinner_item, spinner);
@@ -52,6 +69,45 @@ public class UserProfile extends Activity implements AdapterView.OnItemSelectedL
         emailID.setText(email);
         ExecuteTask1 e=new ExecuteTask1();
         e.execute(email);
+        mtoolbar=findViewById(R.id.nav_action);
+        ActionBar actionbar=getSupportActionBar();
+        actionbar.setCustomView(mtoolbar);
+        navigationView=(NavigationView)findViewById(R.id.navigation);
+        View header=navigationView.getHeaderView(0);
+
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerToggle= new ActionBarDrawerToggle(this,mDrawer,R.string.Open,R.string.Close);
+        mDrawer.addDrawerListener(mDrawerToggle);
+        mDrawerToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        /*mDrawerToggle = new ActionBarDrawerToggle(this,mDrawer,R.string.app_name,R.string.app_name){
+            @Override
+            public void onDrawerClosed(View drawerView) {
+            }
+
+            @Override
+            public void onDrawerOpened(View drawerView) {
+            }
+        };*/
+        navigationView=(NavigationView)findViewById(R.id.navigation);
+        navigationView.setItemIconTintList(null);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+
+                switch (item.getItemId())
+                {
+                    case R.id.requests :
+                        Intent in=new Intent(UserProfile.this,viewreview.class);
+                        startActivity(in);
+                    break;
+
+                }
+                mDrawer.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
 
     }
     class ExecuteTask1 extends AsyncTask<String,Integer,String> {
@@ -120,7 +176,11 @@ public class UserProfile extends Activity implements AdapterView.OnItemSelectedL
                         b[j] = obj.getString("email");
                         empid[j] = obj.getString("emp_id");
 
-editTextUsername.setText(obj.getString("name"));
+                        editTextUsername.setText(obj.getString("name"));
+                        description.setText(obj.getString("position"));
+                        emailID.setText(obj.getString("email"));
+                        age.setText("Age : "+obj.getString("age"));
+                        dept.setText(obj.getString("department"));
 
                     }
                     }
@@ -151,6 +211,27 @@ editTextUsername.setText(obj.getString("name"));
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
+    }
 
 
 }
+

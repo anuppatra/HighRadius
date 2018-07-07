@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="495dp"
+
+    android:padding="16dp">
+    <TextView
+        android:text="Department"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="40dp"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="20dp"
+        android:id="@+id/deprev"
+        android:textIsSelectable="true"
+        />
+
+
+    <TextView
+        android:text="Name : "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/deprev"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="30dp"
+        android:id="@+id/name"
+        android:textIsSelectable="true"
+        />
+
+    <TextView
+        android:text="department :"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/name"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/dept"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:text="r1 "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/dept"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/r11"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:text="r2 "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/r11"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/r22"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:text="r3 "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/r22"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/r33"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:text="r3 "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/r33"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/r44"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:text="r5 "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/r44"
+        android:textColor="#fffff4d8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:id="@+id/r55"
+        android:textIsSelectable="true"
+        />
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:text="Comment "
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/r55"
+        android:textColor="#fffff4d8"
+        android:layout_marginTop="10dp"
+        android:id="@+id/comment"
+        android:textIsSelectable="true"
+        />
+</RelativeLayout>
